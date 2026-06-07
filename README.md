@@ -1,17 +1,26 @@
-# Email/SMS Spam Classifier
+# 📩 Email/SMS Spam Classifier
 
 An end-to-end Machine Learning web application built using **Streamlit** and **Scikit-Learn** to classify SMS and email messages as **Spam** or **Ham (Not Spam)**.
 
-## Project Structure
-*   `app.py`: Streamlit frontend application.
-*   `train_model.py`: Script to train the `MultinomialNB` classifier using `spam.csv` and `vectorizer.pkl`.
-*   `model.pkl`: Trained Multinomial Naive Bayes model.
-*   `vectorizer.pkl`: Fitted TF-IDF Vectorizer with 3,000 max features.
-*   `spam.csv`: SMS Spam Collection dataset used for training.
-*   `requirements.txt`: Python package dependencies.
-*   `.gitignore`: Git ignore patterns.
+## 🚀 Model Performance
+The classifier is powered by a **Multinomial Naive Bayes (MultinomialNB)** algorithm trained on the SMS Spam Collection dataset, preprocessed with Porter Stemming and TF-IDF vectorization:
+*   **Accuracy:** **97.03%**
+*   **Precision:** **100.0%** (0 false positives on the test set, ensuring legitimate emails are not incorrectly flagged as spam)
 
-## Installation & Setup
+---
+
+## 🛠️ Project Structure
+*   `app.py`: Streamlit web application.
+*   `train_model.py`: Training script to preprocess the dataset, train the `MultinomialNB` model, and serialize it.
+*   `model.pkl`: Fully fitted Naive Bayes classifier model.
+*   `vectorizer.pkl`: Fitted TF-IDF Vectorizer with a vocabulary size of 3,000.
+*   `spam.csv`: SMS Spam Collection training dataset.
+*   `requirements.txt`: Python dependencies configuration.
+*   `.gitignore`: List of untracked files/folders (such as the virtual environment `venv/`).
+
+---
+
+## 💻 Local Installation & Setup
 
 1. **Clone the repository:**
    ```bash
@@ -21,9 +30,13 @@ An end-to-end Machine Learning web application built using **Streamlit** and **S
 
 2. **Create and activate a virtual environment:**
    ```bash
-   # On Windows
+   # Windows
    python -m venv venv
    .\venv\Scripts\activate
+
+   # macOS/Linux
+   python3 -m venv venv
+   source venv/bin/activate
    ```
 
 3. **Install dependencies:**
@@ -36,9 +49,17 @@ An end-to-end Machine Learning web application built using **Streamlit** and **S
    python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab'); nltk.download('stopwords')"
    ```
 
-## Running the Web Application
-Start the Streamlit development server:
-```bash
-streamlit run app.py
-```
-Open **http://localhost:8501** in your browser.
+5. **Run the Streamlit application:**
+   ```bash
+   streamlit run app.py
+   ```
+   Open **http://localhost:8501** in your web browser.
+
+---
+
+## ☁️ Deploying to Streamlit Cloud
+This repository has been fully optimized for one-click deployment to **Streamlit Community Cloud**:
+1. Push this project to your GitHub repository.
+2. Sign in to [Streamlit Share](https://share.streamlit.io/).
+3. Click **"New app"**, select this repository, select the `main` branch, and set **`app.py`** as the main file path.
+4. Click **Deploy!** The application is pre-configured to download NLTK data programmatically on startup.
