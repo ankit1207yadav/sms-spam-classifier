@@ -2,6 +2,10 @@
 
 An end-to-end Machine Learning web application built using **Streamlit** and **Scikit-Learn** to classify SMS and email messages as **Spam** or **Ham (Not Spam)**.
 
+### 🔗 Live Demo: [Streamlit Web App](https://sms-spam-classifier-qvcybyewaqkzrbvwhf86qx.streamlit.app/)
+
+---
+
 ## 🚀 Model Performance
 The classifier is powered by a **Multinomial Naive Bayes (MultinomialNB)** algorithm trained on the SMS Spam Collection dataset, preprocessed with Porter Stemming and TF-IDF vectorization:
 *   **Accuracy:** **97.03%**
@@ -54,12 +58,3 @@ The classifier is powered by a **Multinomial Naive Bayes (MultinomialNB)** algor
    streamlit run app.py
    ```
    Open **http://localhost:8501** in your web browser.
-
----
-
-## ☁️ Deploying to Streamlit Cloud
-This repository has been fully optimized for one-click deployment to **Streamlit Community Cloud**:
-1. Push this project to your GitHub repository.
-2. Sign in to [Streamlit Share](https://share.streamlit.io/).
-3. Click **"New app"**, select this repository, select the `main` branch, and set **`app.py`** as the main file path.
-4. Click **Deploy!** The application is pre-configured to download NLTK data programmatically on startup.
